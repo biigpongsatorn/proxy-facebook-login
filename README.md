@@ -1,4 +1,4 @@
-# PROXY-FACEBOOK-LOGIN (VueJS)
+# Proxy-facebook-login
 
 > A Vue.js project is middle ware for login with facebook.
 
@@ -18,15 +18,12 @@ npm run build
 npm run build --report
 ```
 
-## Set App ID And Redirect Url
+## Set App ID
 ``` bash
-# set app id and redirect Url
+# set app id in function statusChangeCallback
 let appId = 'YOUR_APP_ID'
-let uri = encodeURI('http://localhost:8080/')
 
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
-
-# set app id
+# set app id in mounted
 window.fbAsyncInit = () => {
   FB.init({
     appId: 'YOUR_APP_ID',
@@ -39,3 +36,5 @@ window.fbAsyncInit = () => {
   })
 }
 ```
+
+For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
