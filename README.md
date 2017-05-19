@@ -37,4 +37,16 @@ window.fbAsyncInit = () => {
 }
 ```
 
+## Usage
+``` bash
+# login : redirect your app to..
+http://localhost:8080/?action=login&plugin_uri=YOUR_REDIRECT_URL
+# logout : redirect your app to..
+http://localhost:8080/?action=logout&plugin_uri=YOUR_REDIRECT_URL
+
+```
+## Note.
+``` bash
+Don't forget to set app domain in your Facebook app.
+```
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).

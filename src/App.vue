@@ -33,26 +33,26 @@ export default {
       let vm = this
       let appId = 'YOUR_APP_ID'
       let uri = encodeURI('http://localhost:8080/')
-      let redirect_uri = vm.getParameterByName('sellsuki_plugin_uri') || JSON.parse(localStorage.getItem('sellsuki_plugin_uri'))
+      let redirect_uri = vm.getParameterByName('redirect_uri') || JSON.parse(localStorage.getItem('redirect_uri'))
 
       if (vm.action === 'logout') {
         vm.logout(redirect_uri)
       } else {
         if (response.status === 'connected') {
           if (redirect_uri) {
-            if (redirect_uri == JSON.parse(localStorage.getItem('sellsuki_plugin_uri'))) {
-              localStorage.removeItem('sellsuki_plugin_uri')
+            if (redirect_uri == JSON.parse(localStorage.getItem('redirect_uri'))) {
+              localStorage.removeItem('redirect_uri')
             }
-            // Send response to redirect_uri 
+            // Send response to redirect_uri
             window.location = encodeURI(`${redirect_uri}?userID=${response.authResponse.userID}`)
           } else {
             // Handle Error
             alert('Not have redirect uri.')
           }
         } else {
-          let param = vm.getParameterByName('sellsuki_plugin_uri')
+          let param = vm.getParameterByName('redirect_uri')
           if (param) {
-            localStorage.setItem('sellsuki_plugin_uri', JSON.stringify(param))
+            localStorage.setItem('redirect_uri', JSON.stringify(param))
             window.location = encodeURI(`https://www.facebook.com/dialog/oauth?client_id=${appId}&redirect_uri=${uri}&response_type=token`)
           }
         }
