@@ -43,8 +43,9 @@ export default {
             if (redirect_uri == JSON.parse(localStorage.getItem('redirect_uri'))) {
               localStorage.removeItem('redirect_uri')
             }
+            console.log(response)
             // Send response to redirect_uri
-            window.location = encodeURI(`${redirect_uri}?userID=${response.authResponse.userID}`)
+            window.location = encodeURI(`${redirect_uri}?userID=${response.authResponse.userID}&accessToken=${response.authResponse.accessToken}&expiresIn=${response.authResponse.expiresIn}&signedRequest=${response.authResponse.signedRequest}`)
           } else {
             // Handle Error
             alert('Not have redirect uri.')
