@@ -18,11 +18,13 @@ npm run build
 npm run build --report
 ```
 
-## Set app id and redirect Url
+## Set App ID And Redirect Url
 ``` bash
 # set app id and redirect Url
 let appId = 'YOUR_APP_ID'
 let uri = encodeURI('http://localhost:8080/')
+
+For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
 # set app id
 window.fbAsyncInit = () => {
@@ -37,5 +39,3 @@ window.fbAsyncInit = () => {
   })
 }
 ```
-
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
