@@ -1,4 +1,4 @@
-# proxy-facebook-login
+# PROXY-FACEBOOK-LOGIN (VueJS)
 
 > A Vue.js project is middle ware for login with facebook.
 
